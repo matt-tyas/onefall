@@ -39,7 +39,6 @@
 .of-secondary-nav {
   position: absolute;
   top: 0px;
-  //float: none;
 
   @include media(large) {
     position: static;
@@ -55,7 +54,7 @@
   }
 }
 
-.of-primary-nav__link {
+.of-primary-nav__link a {
 
   color: $white;
   border-bottom: 0;

@@ -23,28 +23,17 @@
         </script>
 
 	</head>
-	<body <?php body_class(); ?>>
-
-		<!-- wrapper -->
-		<div class="wrapper">
-
-			<!-- header -->
-			<header class="header clear" role="banner">
-
-					<!-- logo -->
-					<div class="logo">
-						<a href="<?php echo home_url(); ?>">
-							<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-							<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="Logo" class="logo-img">
-						</a>
-					</div>
-					<!-- /logo -->
-
-					<!-- nav -->
-					<nav class="nav" role="navigation">
-						<?php html5blank_nav(); ?>
-					</nav>
-					<!-- /nav -->
-
+	<body <?php body_class('of-bg'); ?>>
+        <div class="of-header">
+            <header class="wrap">
+				<div class="logo">
+					<a class="of-logo" aria-label="Homepage" href="<?php echo home_url(); ?>">
+						<img src="<?php echo get_template_directory_uri(); ?>/img/logo/one-fall.svg" class="logo-img" alt="One fall" onerror="this.onerror=null; this.src='<?php echo get_template_directory_uri(); ?>/img/logoone-fall.png'">
+					</a>
+				</div>
+				<nav id="navigation" class="nav">
+					<?php onefall_nav(); ?>
+				</nav>
+				<?php wp_nav_menu( array( 'theme_location' => 'header-secondary-menu', 'menu_class' => 'of-secondary-nav list-inline' )); ?>
 			</header>
-			<!-- /header -->
+        </div>
