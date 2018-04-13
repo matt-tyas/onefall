@@ -1,9 +1,7 @@
 var gulp = require('gulp');
-var scsslint = require('gulp-scss-lint');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
-var connect = require('gulp-connect');
 var concat = require('gulp-concat');
 var include = require('gulp-include');
 var jshint = require('gulp-jshint');
@@ -15,30 +13,22 @@ var mocha = require('gulp-mocha');
 /**
  * Settings
  */
-var src = 'src/';
-var dest = 'build/';
+var src = '';
+var dest = '';
 
 var src_paths = {
-  styles: src + '_css/**/*.scss',
-  scripts: src + '_js/**/*.js',
-  assets: [
-    src + '_assets/**/*'
-  ],
-  html: src + '**/*.html'
+  styles: src + 'scss/**/*.scss',
+  scripts: src + 'js/**/*.js'
 };
 
 var dest_paths = {
-  styles: dest + 'assets/css',
-  scripts: dest + 'assets/js',
-  assets: dest + 'assets'
+  styles: dest + '',
+  scripts: dest + 'js/scripts.min.js'
 };
 
 var settings = {
   sass: {
-    outputStyle: 'compressed',
-    includePaths: [
-      src + 'src/css'
-    ]
+    outputStyle: 'compressed'
   },
   autoprefixer: {
     browsers: ['> 5%', 'last 2 versions']
@@ -56,29 +46,11 @@ gulp.task('lintjs', function() {
     .pipe(jshint.reporter(stylish));
 });
 
-// gulp.task('lintscss', function() {
-//   gulp.src(src_paths.styles)
-//     .pipe(scsslint());
-// });
-
 
 /**
  * Build tasks
  */
 
-// Jekyll
-gulp.task('html', ['jekyll'], function() {
-  gulp.src(dest + '**/*.html')
-    .pipe(connect.reload());
-});
-gulp.task('jekyll', function (gulpCallBack){
-  var spawn = require('child_process').spawn;
-  var jekyll = spawn('jekyll', ['build'], {stdio: 'inherit', cwd: 'src'});
-
-  jekyll.on('exit', function(code) {
-    gulpCallBack(code === 0 ? null : 'ERROR: Jekyll process exited with code: '+code);
-  });
-});
 
 // Styles
 gulp.task('css', function() {
@@ -87,9 +59,9 @@ gulp.task('css', function() {
       .pipe(sass(settings.sass))
       .on('error', sass.logError)
       .pipe(autoprefixer(settings.autoprefixer))
+      // .pipe(purge())
     .pipe(sourcemaps.write('maps/'))
     .pipe(gulp.dest(dest_paths.styles))
-    .pipe(connect.reload());
 });
 
 // Scripts
@@ -97,18 +69,10 @@ gulp.task('js', ['lintjs'], function() {
   gulp.src(src_paths.scripts)
     .pipe(sourcemaps.init())
       .pipe(include())
-      .pipe(concat('main.js'))
+      .pipe(concat('scripts.min.js'))
       .pipe(uglify())
     .pipe(sourcemaps.write('maps/'))
     .pipe(gulp.dest(dest_paths.scripts))
-    .pipe(connect.reload());
-});
-
-// Static assets
-gulp.task('assets', function() {
-  gulp.src(src_paths.assets)
-    .pipe(gulp.dest(dest_paths.assets))
-    .pipe(connect.reload());
 });
 
 
@@ -128,27 +92,14 @@ gulp.task('testjs', function() {
 gulp.task('watch', function() {
   gulp.watch(src_paths.styles, ['css']);
   gulp.watch(src_paths.scripts, ['lintjs', 'js']);
-  gulp.watch(src_paths.assets, ['assets']);
-  gulp.watch([src_paths.html, src + '_config.yml'], ['html']);
 });
 
-
-/**
- * Local server
- */
-gulp.task('connect', function() {
-  connect.server({
-    port: 9000,
-    root: 'build',
-    livereload: true
-  });
-});
 
 /**
  * Run tasks
  */
 gulp.task('test', ['testjs']);
-gulp.task('build', ['html', 'css', 'js', 'assets']);
-gulp.task('server', ['build', 'watch', 'connect']);
+gulp.task('build', ['css', 'js']);
+gulp.task('server', ['build', 'watch']);
 
 gulp.task('default', ['server']);
