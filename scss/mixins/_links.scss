@@ -1,0 +1,18 @@
+// Links mixins - One fall
+
+@mixin link($color: $hart-pink) {
+  color: $color;
+  border-bottom: .075em solid $color;
+  text-decoration: none;
+
+  &:hover {
+    color: darken($color, 15%);
+    border-color: darken($color, 15%);
+  }
+
+  &:active,
+  &:focus {
+    transition: none;
+    outline: 4px solid $dusty-yellow;
+  }
+}

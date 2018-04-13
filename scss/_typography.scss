@@ -1,0 +1,118 @@
+// Typography - One fall
+
+@import "mixins/typography";
+
+h1, .h1, .alpha,
+h2, .h2, .beta,
+h3, .h3, .gamma,
+h4, .h4, .delta,
+h5, .h5, .epsilon,
+h6, .h6, .zeta,
+ul,
+ol,
+p,
+address {
+  font-weight: normal;
+  margin-top: 0;
+}
+
+h1, .h1, .alpha,
+h2, .h2, .beta,
+h3, .h3, .gamma,
+h4, .h4, .delta,
+h5, .h5, .epsilon,
+h6, .h6, .zeta {
+  font-family: $regular;
+}
+
+p,
+ul,
+ol{
+  @include body;
+  @include spacing('margin', 'bottom', 'half');
+}
+
+.h-mega {
+  @include heading-mega;
+}
+
+h1, .h1, .alpha {
+  @include heading-h1;
+}
+
+h2, .h2, .beta {
+  @include heading-h2;
+}
+
+h3, .h3, .gamma {
+  @include heading-h3;
+}
+
+h4, .h4, .delta {
+  @include heading-h4;
+}
+
+h5, .h5, .epsilon {
+  @include heading-h5;
+}
+
+h6, .h6, .zeta {
+  @include heading-h6;
+}
+
+small,
+.smallprint {
+  @include small;
+}
+
+hr {
+  display: block;
+  margin: 2em 0 3em;
+  border-width: 0 0 1px;
+  height: 0;
+}
+
+.regular {
+  @include regular;
+}
+
+.light {
+  @include light;
+}
+
+blockquote {
+  @include blockquote;
+}
+
+cite {
+  @include cite;
+}
+
+del,
+.line-through {
+  @include line-through;
+}
+
+address {
+  @include regular;
+}
+
+.of-page-title {
+  margin-bottom: 0;
+
+  .of-page-title__lead {
+    @include spacing('margin', 'top', 'half');
+    @include light;
+    display: block;
+    margin-bottom: 0;
+    font-size: em-calc(8);
+  }
+}
+
+.of-page-title + .of-page {
+  margin-top: 0;
+}
+
+.of-page-month {
+  @include spacing('margin', 'top', 'quarter');
+}

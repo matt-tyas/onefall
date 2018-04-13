@@ -1,0 +1,48 @@
+// Buttons mixins - One fall
+
+@import "../functions";
+@import "helpers";
+
+%of-button {
+  @include body;
+  display: inline-block;
+  padding: $quarter-spacing-unit $half-spacing-unit * 1.25;
+  color: $white;
+  font-family: $regular;
+  text-align: center;
+  line-height: .85;
+  border: 0;
+  background-color: $hart-pink;
+  transition: all 0.15s linear;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    color: $white;
+    background-color: darken($hart-pink, 15%);
+  }
+
+  &:focus {
+    outline: 4px solid $dusty-yellow;
+  }
+
+  &:disabled,
+  &.disabled {
+    opacity: .75;
+    cursor: not-allowed;
+  }
+
+}
+
+%of-button-large {
+  @include spacing('padding', 'top', 'quarter');
+  @include spacing('padding', 'bottom', 'quarter');
+  @include spacing('padding', 'left', 'base');
+  @include spacing('padding', 'right', 'base');
+  font-size: em-calc(24px);
+}
+
+%of-button-medium {
+  padding: 24px 24px 18px 24px;
+  font-size: em-calc(24px);
+}

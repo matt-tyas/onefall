@@ -1,0 +1,9 @@
+// Forms - One fall
+
+@import "../functions";
+@import "../mixins/forms";
+
+.of-text {
+  @include form-field;
+  box-sizing: border-box;
+}

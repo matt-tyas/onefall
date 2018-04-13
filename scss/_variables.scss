@@ -1,0 +1,101 @@
+// Variables - onefall.co.uk
+
+
+// Base URL for any linked assets.
+$base-asset-url: '../' !default;
+
+
+// Colours
+$white: #ffffff;
+$black: #000000;
+
+// brand
+$hart-pink: #ff046c;
+
+// UI
+$undertaker-grey: #282828;
+$undertaker-glove-grey: #979797;
+$repo-light-grey: #eeeeee;
+$dusty-yellow: #ffbf47;
+
+
+// Maximum IE version targetted by the generated stylesheet.
+$ie: 999 !default;
+
+$base-line-height: 1.6 !default; // 32px
+$base-spacing-unit: 60px !default;
+$three-quarter-spacing-unit: $base-spacing-unit / 4 * 3 !default; // 45px
+$half-spacing-unit: $base-spacing-unit / 2 !default; // 30px
+$quarter-spacing-unit: $half-spacing-unit / 2 !default; // 15px
+$sixth-spacing-unit: $base-spacing-unit / 6 !default; // 10.66666667px (legacy)
+$eighth-spacing-unit: $base-spacing-unit / 8 !default; // 7.5px
+
+
+$typographic-scale: (
+  base: (
+    body: 16px,
+    h-mega: 36px,
+    h1: 30px,
+    h2: 20px,
+    h3: 18px,
+    h4: 18px,
+    h5: 18px,
+    h6: 13px,
+    blockquote: 20px,
+    lead: 20px,
+    small: 13px,
+    base-line-height: 1.7,
+    base-spacing-unit: 30px,
+  ),
+  medium: (
+    body: 20px,
+    h-mega: 60px,
+    h1: 46px,
+    h2: 26px,
+    h3: 22px,
+    h4: 22px,
+    h5: 22px,
+    h6: 16px,
+    blockquote: 26px,
+    lead: 26px,
+    small: 13px,
+    base-line-height: 1.6,
+    base-spacing-unit: 60px,
+  )
+) !default;
+
+
+// Border radius
+$border-radius: 3px !default;
+
+
+$regular: 'pressura-regular', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$light: 'pressura-light', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+// $regular-italic: 'AvenirNextLTW01-Italic', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+// $bold: 'AvenirNextLTW01-Demi', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+// $bold-italic: 'AvenirNextLTW01-DemiIta', 'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+
+
+// Grid settings
+$grid-gutter: $half-spacing-unit !default;
+$grid-screen-sizes: ("xsmall", "small", "medium", "large", "xlarge") !default; // Only classes listed here will be generated. These classes should follow the breakpoints given below.
+$grid-total-columns: 12 !default; // If less than 12 columns are required, setting this lower will reduce the amount of column width classes generated.
+$grid-include-center-classes: true !default; // If set to false, column centring classes (e.g. '.small-centered') will not be generated.
+$grid-include-pull-classes: true !default; // If set to false, column pull classes (e.g. '.small-pull-2') will not be generated.
+$grid-include-push-classes: true !default; // If set to false, column push classes (e.g. '.small-push-2') will not be generated.
+$grid-include-offset-classes: true !default; // If set to false, column offset classes (e.g. '.small-offset-4') will not be generated.
+
+
+// Breakpoints
+$breakpoints: (
+  xsmall: 320px,
+  small:  480px,
+  medium: 750px,
+  large:  960px,
+  xlarge: 1240px
+) !default;
+
+
+// Viewport orientation
+$landscape: "only screen and (orientation: landscape)" !default;
+$portrait: "only screen and (orientation: portrait)" !default;

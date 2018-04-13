@@ -1,0 +1,10 @@
+// Cards - One fall
+
+@import "../../functions";
+
+.of-card-ad {
+  // temp height
+  min-height: 300px;
+  @include spacing('margin', 'bottom', 'half');
+  background: $undertaker-glove-grey;
+}

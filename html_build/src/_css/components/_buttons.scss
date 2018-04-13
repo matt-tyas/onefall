@@ -1,0 +1,17 @@
+// Buttons - One fall
+
+@import "../functions";
+@import "../mixins/buttons";
+
+button,
+.of-btn {
+  @extend %of-button;
+}
+
+.of-btn--large {
+  @extend %of-button-large;
+}
+
+.of-btn--medium {
+  @extend %of-button-medium;
+}

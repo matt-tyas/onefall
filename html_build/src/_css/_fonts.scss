@@ -1,0 +1,23 @@
+// Fonts - One fall
+
+@import "functions";
+
+@font-face{
+  font-family: "pressura-light";
+  //src: asset-url("fonts/1a7c9181-cd24-4943-a9d9-d033189524e0.eot?#iefix");
+  src: // asset-url("assets/fonts/1a7c9181-cd24-4943-a9d9-d033189524e0.eot?#iefix") format("eot"),
+    asset-url("fonts/gt-pressura-trial-light-webfont.woff2") format("woff2")
+    asset-url("fonts/gt-pressura-trial-light-webfont.woff") format("woff");
+    // asset-url("assets/fonts/63a74598-733c-4d0c-bd91-b01bffcd6e69.ttf") format("truetype"),
+    // asset-url("assets/fonts/a89d6ad1-a04f-4a8f-b140-e55478dbea80.svg#a89d6ad1-a04f-4a8f-b140-e55478dbea80") format("svg");
+}
+
+@font-face{
+  font-family: "pressura-regular";
+  //src: asset-url("assets/fonts/1a7c9181-cd24-4943-a9d9-d033189524e0.eot?#iefix");
+  src: // asset-url("assets/fonts/1a7c9181-cd24-4943-a9d9-d033189524e0.eot?#iefix") format("eot"),
+    asset-url("fonts/gt-pressura-trial-regular-webfont.woff2") format("woff2"),
+    asset-url("fonts/gt-pressura-trial-regular-webfont.woff") format("woff");
+    //asset-url("assets/fonts/63a74598-733c-4d0c-bd91-b01bffcd6e69.ttf") format("truetype"),
+    //asset-url("assets/fonts/a89d6ad1-a04f-4a8f-b140-e55478dbea80.svg#a89d6ad1-a04f-4a8f-b140-e55478dbea80") format("svg");
+}

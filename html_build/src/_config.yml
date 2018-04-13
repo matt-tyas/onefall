@@ -1,0 +1,13 @@
+# Jekyll config
+
+# Site settings
+title: One fall
+description: One fall
+baseurl: ""
+url: "http://onefall.co.uk"
+
+# Build settings
+source: ./
+destination: ../build
+keep_files: ['css', 'js', 'assets']
+markdown: kramdown

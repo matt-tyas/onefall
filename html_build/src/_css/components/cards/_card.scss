@@ -1,0 +1,149 @@
+// Cards - One fall
+
+@import "../../functions";
+
+.of-page {
+  @include spacing('margin', 'top', 'half');
+  @include spacing('margin', 'bottom', 'half');
+  @include spacing('padding', 'all', 'half');
+  background: $white;
+}
+
+.of-sidebar {
+  @include spacing('margin', 'top', 'half');
+  @include spacing('margin', 'bottom', 'half');
+}
+
+.of-page-card {
+  position: relative;
+  min-height: 130px;
+  margin-top: 0;
+
+  @include media(medium) {
+    min-height: auto;
+  }
+}
+
+.of-page-card-inpage {
+  padding: 30px 30px 30px 0;
+}
+
+.of-page-card__link {
+  @include spacing('margin', 'bottom', 'eighth');
+  display: block;
+  color: $undertaker-grey;
+  border-bottom: 0;
+
+  &:hover {
+    color: $undertaker-grey;
+  }
+}
+
+.of-page-card__title {
+  margin-bottom: 0;
+  margin-left: 120px;
+  padding-top: 0;
+
+  @include media(medium) {
+    margin-left: 120px;
+  }
+}
+
+.of-page-card__title--hero {
+  margin-left: 130px;
+  margin-bottom: 0 !important;
+  line-height: 1.2;
+  color: $white;
+
+  @include media(medium) {
+    margin-left: 140px;
+    margin-bottom: 0 !important;
+  }
+}
+
+.of-page-card__date {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  height: 102px;
+  width: 102px;
+  padding: 5px;
+  color: $white;
+  background: $hart-pink;
+  text-align: center;
+}
+
+.of-page-card__date--hero {
+  top: 4px;
+  left: 0;
+  color: $hart-pink;
+  background: $white;
+
+  @include media(medium) {
+    top: 6px;
+  }
+}
+
+.of-page-card__date--inpage {
+  left: 0;
+}
+
+.of-page-card__date--day,
+.of-page-card__date--date,
+.of-page-card__date--month {
+  display: block;
+}
+
+.of-page-card__date--date {
+  font-family: $regular;
+  font-size: em-calc(46);
+  line-height: 1;
+}
+
+.of-page-card__date--day,
+.of-page-card__date--month {
+  font-family: $light;
+  text-transform: uppercase;
+}
+
+.of-page-card__date--month {
+  margin-top: -10px;
+}
+
+.of-page-card__location {
+  margin-left: 120px;
+  @include spacing('margin', 'bottom', 'quarter');
+
+  @include media(medium) {
+    margin-left: 120px;
+  }
+}
+
+.of-page-card__location--hero {
+  margin-left: 130px;
+  @include spacing('margin', 'bottom', 'quarter');
+
+  @include media(medium) {
+    margin-left: 140px;
+  }
+}
+
+.of-page-card__location__city,
+.of-page-card__location__venue {
+  display: block;
+
+  @include media(medium) {
+    display: inline;
+  }
+}
+
+.of-page-card__location__city--hero,
+.of-page-card__location__venue--hero {
+  display: block;
+  color: $white;
+}
+
+.of-page-card__button--hero {
+  @include spacing('margin', 'top', 'quarter');
+  @include spacing('margin', 'bottom', 'quarter');
+}

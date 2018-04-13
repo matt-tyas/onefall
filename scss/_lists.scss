@@ -1,0 +1,33 @@
+// Lists - One fall
+
+@import "variables";
+@import "mixins/helpers";
+@import "mixins/lists";
+
+ul, ol {
+  @include list;
+}
+
+p + ul {
+  margin-top: -$eighth-spacing-unit;
+
+  @include media(medium) {
+     margin-top: -$quarter-spacing-unit;
+  }
+}
+
+.list-bare {
+  @include list-bare;
+}
+
+.list-inline {
+  @include list-inline;
+}
+
+dt {
+  margin-bottom: $half-spacing-unit;
+}
+
+dd {
+  margin: 0 0 $half-spacing-unit;
+}

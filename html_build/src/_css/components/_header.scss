@@ -1,0 +1,28 @@
+// Header - One fall
+
+.of-header {
+  @include clearfix;
+  padding: 28px 0;
+  background-color: $undertaker-grey;
+
+  @include media(large) {
+      padding: 56px 0;
+  }
+}
+
+.of-logo {
+  display: inline-block;
+  float: left;
+  border-bottom: 0;
+
+  img {
+    width: 120px;
+    height: 50px;
+
+    @include media(large) {
+      width: 190px;
+      height: 80px;
+    }
+  }
+
+}

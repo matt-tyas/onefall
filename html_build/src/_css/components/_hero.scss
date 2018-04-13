@@ -1,0 +1,41 @@
+// Hero - One fall
+
+.of-hero {
+  padding-top: 40px;
+  padding-bottom: 50px;
+  background: no-repeat url('../images/hero/of-hero-hart-tint.jpg') $undertaker-grey;
+
+  @include media(large) {
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+
+  .of-btn--large {
+    width: auto;
+    padding-top: $quarter-spacing-unit + 4px;
+    padding-bottom: $quarter-spacing-unit;
+
+    @include media(large) {
+      width: 100%;
+      padding-top: $half-spacing-unit + 8px;
+      padding-bottom: $half-spacing-unit + 3px;
+    }
+  }
+}
+
+.of-hero__title {
+  @include spacing('margin', 'bottom', 'quarter');
+  color: $white;
+}
+
+.of-hero__search {
+  margin-bottom: $quarter-spacing-unit;
+  padding: $quarter-spacing-unit;
+  font-size: em-calc(24px);
+
+  @include media(large) {
+    margin-bottom: 0;
+    padding: $half-spacing-unit;
+  }
+
+}
