@@ -10,6 +10,11 @@
 \*------------------------------------*/
 
 // Load any external files you have here
+add_rewrite_rule('^locations/?','index.php?tax=$matches[1]','top');
+
+if (get_query_var('tax')) {
+    load_template( dirname( __FILE__ ) . 'taxonomy-locations.php' );
+}
 
 /*------------------------------------*\
 	Theme Support
@@ -400,6 +405,26 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 /*------------------------------------*\
 	Custom Post Types
 \*------------------------------------*/
+
+/* Homepage admin */
+
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Homepage admin',
+		'menu_title'	=> 'Homepage',
+		'menu_slug' 	=> 'homepage-admin',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+
+	// acf_add_options_sub_page(array(
+	// 	'page_title' 	=> 'Theme Header Settings',
+	// 	'menu_title'	=> 'Header',
+	// 	'parent_slug'	=> 'theme-general-settings',
+	// ));
+
+}
 
 // // Create 1 Custom Post type for a Demo, called HTML5-Blank
 // function create_post_type_html5()

@@ -1,7 +1,7 @@
 <!-- hero search -->
 <section class="of-hero" style="background-image:url('<?php the_field('hero_image', 'option'); ?>');">
     <div class="wrap">
-        <h1 class="of-hero__title"><label for="search">Find Professional Wrestling in your&nbsp;area</label></h1>
+        <h1 class="of-hero__title"><?php the_field('hero_title', 'option'); ?></h1>
         <div class="row">
             <form>
                 <div class="large-9 small-12 column">
